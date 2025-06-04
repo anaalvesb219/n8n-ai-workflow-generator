@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo circular -->
+  <circle cx="24" cy="24" r="22" fill="#ff6d5a"/>
+  
+  <!-- Letras n8n simplificadas -->
+  <g fill="#ffffff">
+    <!-- Primeira letra n -->
+    <rect x="10" y="15" width="3" height="18" rx="1" />
+    <rect x="10" y="15" width="6" height="3" rx="1" />
+    <rect x="16" y="15" width="3" height="18" rx="1" />
+    
+    <!-- Número 8 simplificado -->
+    <circle cx="24" cy="19" r="4" fill="#ff6d5a" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="24" cy="29" r="4" fill="#ff6d5a" stroke="#ffffff" stroke-width="2.5"/>
+    
+    <!-- Segunda letra n -->
+    <rect x="29" y="15" width="3" height="18" rx="1" />
+    <rect x="29" y="15" width="6" height="3" rx="1" />
+    <rect x="35" y="15" width="3" height="18" rx="1" />
+  </g>
+  
+  <!-- Ponto AI (simplificado) -->
+  <circle cx="36" cy="12" r="6" fill="#6e62e5" stroke="#ffffff" stroke-width="1.5"/>
+</svg> 

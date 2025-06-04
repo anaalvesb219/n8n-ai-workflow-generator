@@ -1,0 +1,29 @@
+Para gerar os ícones necessários para a extensão:
+
+1. Use os arquivos SVG fornecidos (icon.svg, icon-small.svg e icon-tiny.svg) como base.
+
+2. Para gerar os PNGs necessários:
+   - icon16.png: Use icon-tiny.svg e converta para PNG com 16x16 pixels
+   - icon32.png: Use icon-small.svg e converta para PNG com 32x32 pixels
+   - icon48.png: Use icon-small.svg e converta para PNG com 48x48 pixels
+   - icon128.png: Use icon.svg e converta para PNG com 128x128 pixels
+
+3. Você pode usar uma ferramenta online de conversão SVG para PNG como:
+   - https://svgtopng.com/
+   - https://convertio.co/svg-png/
+   - https://cloudconvert.com/svg-to-png
+
+4. Ou usar aplicações desktop como:
+   - Inkscape (Exportar como PNG)
+   - Adobe Illustrator
+   - GIMP com o plugin SVG
+   - Photoshop com importação SVG
+
+5. Após a conversão, salve cada arquivo PNG com o nome correspondente na pasta "images".
+
+Observações:
+- Mantenha os fundos transparentes (PNG com canal alpha)
+- Certifique-se de que as imagens tenham exatamente as dimensões especificadas
+- As imagens em tamanhos menores devem ser versões simplificadas e legíveis
+
+Estas imagens são referenciadas no manifest.json e são necessárias para que a extensão seja exibida corretamente no Chrome Web Store e na barra de ferramentas do navegador. 

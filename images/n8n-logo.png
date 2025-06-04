@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .n8n-logo {
+      fill: #ff6d5a;
+    }
+    .n8n-logo-bg {
+      fill: #ffffff;
+    }
+  </style>
+  
+  <!-- Fundo retangular (opcional) -->
+  <rect class="n8n-logo-bg" x="0" y="0" width="200" height="60" rx="5" />
+  
+  <!-- Letras n8n estilizadas -->
+  <g class="n8n-logo" transform="translate(20, 5)">
+    <!-- Primeira letra n -->
+    <rect x="0" y="0" width="12" height="50" rx="4" />
+    <rect x="0" y="0" width="30" height="12" rx="4" />
+    <rect x="30" y="0" width="12" height="50" rx="4" />
+    
+    <!-- Número 8 estilizado -->
+    <circle cx="70" cy="16" r="14" fill="#ffffff" stroke="#ff6d5a" stroke-width="10"/>
+    <circle cx="70" cy="34" r="14" fill="#ffffff" stroke="#ff6d5a" stroke-width="10"/>
+    
+    <!-- Segunda letra n -->
+    <rect x="110" y="0" width="12" height="50" rx="4" />
+    <rect x="110" y="0" width="30" height="12" rx="4" />
+    <rect x="140" y="0" width="12" height="50" rx="4" />
+  </g>
+</svg> 

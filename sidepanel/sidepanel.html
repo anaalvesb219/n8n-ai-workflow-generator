@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n AI Workflow Generator</title>
+  <link rel="stylesheet" href="styles/sidepanel.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <img src="../images/n8n-logo.png" alt="n8n Logo" class="logo-img">
+        <h1>AI Workflow Generator</h1>
+      </div>
+      <div class="tab-navigation">
+        <button class="tab-btn active" data-tab="analysis">Análise</button>
+        <button class="tab-btn" data-tab="chat">Chat</button>
+        <button class="tab-btn" data-tab="config">Configurações</button>
+      </div>
+    </header>
+    
+    <main class="main-container">
+      <!-- Contêiner de análise de página -->
+      <div id="analysis-container" class="tab-content active">
+        <div class="action-bar">
+          <button id="analyze-page-btn" class="btn primary-btn">Analisar Página</button>
+        </div>
+        <div class="analysis-loading">
+          <div class="spinner"></div>
+          <p>Aguardando análise...</p>
+        </div>
+      </div>
+      
+      <!-- Contêiner de chat com IA -->
+      <div id="chat-container" class="tab-content">
+        <div class="chat-messages">
+          <div class="chat-welcome">
+            <h2>Chat com IA</h2>
+            <p>Converse com a IA para tirar dúvidas sobre workflows n8n ou receber sugestões personalizadas.</p>
+          </div>
+        </div>
+        <form id="chat-form" class="chat-input-form">
+          <input type="text" name="message" placeholder="Digite sua mensagem..." autocomplete="off">
+          <button type="submit" class="send-btn">Enviar</button>
+        </form>
+        <div class="chat-actions">
+          <button id="clear-chat-btn" class="btn secondary-btn">Limpar Chat</button>
+        </div>
+      </div>
+      
+      <!-- Contêiner de configurações -->
+      <div id="config-container" class="tab-content">
+        <!-- Conteúdo será preenchido pelo componente ConfigComponent -->
+      </div>
+    </main>
+    
+    <footer class="app-footer">
+      <div class="version-info">
+        <span>v1.3.0</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://n8n.io/docs/" target="_blank">Documentação n8n</a>
+        <a href="https://github.com/n8n-io/n8n" target="_blank">GitHub</a>
+      </div>
+    </footer>
+  </div>
+  
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html> 
