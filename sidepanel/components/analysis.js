@@ -973,7 +973,9 @@ export class AnalysisComponent {
           <p class="workflow-description">${workflow.description || "Workflow gerado por IA"}</p>
           <div class="workflow-meta">
             <span class="workflow-nodes">${workflow.nodes.length} nós</span>
-            <span class="workflow-id">ID: ${workflow.id.substring(0, 8)}...</span>
+            <span class="workflow-id">ID: ${
+              workflow.id ? workflow.id.substring(0, 8) + "..." : "novo"
+            }</span>
           </div>
         </div>
         
