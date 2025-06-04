@@ -46,9 +46,17 @@ export class AnalysisComponent {
       }
       
       // Agora sim enviar a mensagem
-      const response = await chrome.tabs.sendMessage(tab.id, { action: "analyzePage" });
-      
-      if (!response || !response.analysis) {
+      const response = await chrome.tabs.sendMessage(tab.id, {
+        action: "analyzePage",
+      });
+
+      if (!response) {
+        throw new Error("Nenhuma resposta do content script");
+      }
+      if (response.error) {
+        throw new Error(response.error);
+      }
+      if (!response.analysis) {
         throw new Error("Não foi possível analisar a página");
       }
       
