@@ -363,16 +363,26 @@ if (window.__n8nAIContentScriptInjected) {
     if (element.id) {
       return '#' + element.id;
     }
-    if (element.className) {
-      const classes = element.className.split(' ').filter(c => c.trim().length > 0);
-      if (classes.length > 0) {
-        return '.' + classes.join('.');
+
+    var className = '';
+
+    if (typeof element.className === 'string') {
+      className = element.className;
+    } else if (typeof element.className === 'object' && element.className.baseVal) {
+      // Suporte para elementos SVG onde className é um SVGAnimatedString
+      className = element.className.baseVal;
+    } else if (element.getAttribute) {
+      className = element.getAttribute('class') || '';
+    }
+
+    if (className) {
+      var classes = className.split(' ').filter(function(c) { return c.trim(); });
+      if (classes.length) {
+        return '.' + classes[0];
       }
     }
-    // Último recurso: tipo de elemento e índice
-    const siblings = element.parentNode ? Array.from(element.parentNode.children) : [];
-    const index = siblings.indexOf(element);
-    return element.tagName.toLowerCase() + (index >= 0 ? ':nth-child(' + (index + 1) + ')' : '');
+
+    return element.tagName.toLowerCase();
   }
 
   // -----------------------
