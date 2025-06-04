@@ -326,10 +326,30 @@ function getElementPosition(element) {
  * Função auxiliar para gerar seletor CSS
  */
 function getSelector(element) {
-  if (element.id) return `#${element.id}`;
-  if (element.className) {
-    const classes = element.className.split(' ').filter(c => c.trim());
-    if (classes.length) return `.${classes[0]}`;
+  if (element.id) {
+    return `#${element.id}`;
   }
+
+  let className = "";
+
+  if (typeof element.className === "string") {
+    className = element.className;
+  } else if (
+    typeof element.className === "object" &&
+    element.className.baseVal
+  ) {
+    // Suporte para elementos SVG onde className é um SVGAnimatedString
+    className = element.className.baseVal;
+  } else if (element.getAttribute) {
+    className = element.getAttribute("class") || "";
+  }
+
+  if (className) {
+    const classes = className.split(" ").filter((c) => c.trim());
+    if (classes.length) {
+      return `.${classes[0]}`;
+    }
+  }
+
   return element.tagName.toLowerCase();
-} 
+}
