@@ -46,9 +46,17 @@ export class AnalysisComponent {
       }
       
       // Agora sim enviar a mensagem
-      const response = await chrome.tabs.sendMessage(tab.id, { action: "analyzePage" });
-      
-      if (!response || !response.analysis) {
+      const response = await chrome.tabs.sendMessage(tab.id, {
+        action: "analyzePage",
+      });
+
+      if (!response) {
+        throw new Error("Nenhuma resposta do content script");
+      }
+      if (response.error) {
+        throw new Error(response.error);
+      }
+      if (!response.analysis) {
         throw new Error("Não foi possível analisar a página");
       }
       
@@ -965,7 +973,9 @@ export class AnalysisComponent {
           <p class="workflow-description">${workflow.description || "Workflow gerado por IA"}</p>
           <div class="workflow-meta">
             <span class="workflow-nodes">${workflow.nodes.length} nós</span>
-            <span class="workflow-id">ID: ${workflow.id.substring(0, 8)}...</span>
+            <span class="workflow-id">ID: ${
+              workflow.id ? workflow.id.substring(0, 8) + "..." : "novo"
+            }</span>
           </div>
         </div>
         
